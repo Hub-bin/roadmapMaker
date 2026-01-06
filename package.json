@@ -1,0 +1,70 @@
+{
+  "name": "nuclear-roadmap-system",
+  "private": true,
+  "version": "2.1.0",
+  "main": "electron-main.js",
+  "description": "KHNP Nuclear Roadmap Management System",
+  "author": "Seo Yeongbin",
+  "scripts": {
+    "dev": "concurrently \"node server.js\" \"vite\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none npm run dev\" \"wait-on http://localhost:5173 && electron .\"",
+    "dist": "npm run build && electron-builder",
+    "dist:win": "npm run build && electron-builder --win",
+    "dist:linux": "npm run build && electron-builder --linux"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "papaparse": "^5.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "stream-browserify": "^3.0.0",
+    "uuid": "^9.0.1",
+    "vis-timeline": "^7.7.3",
+    "wait-on": "^7.2.0",
+    "xlsx-js-style": "^1.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1",
+    "vite": "^5.0.8"
+  },
+  "build": {
+    "appId": "com.khnp.roadmap",
+    "productName": "KHNP Roadmap System",
+    "files": [
+      "dist/**/*",
+      "electron-main.js",
+      "server.js",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "roadmap_data",
+        "to": "roadmap_data",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/khnpCI.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/khnpCI.ico",
+      "category": "Office"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

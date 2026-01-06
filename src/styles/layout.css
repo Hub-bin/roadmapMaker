@@ -1,0 +1,290 @@
+/* =========================================
+   [필수] 시작 화면 (Start Screen) 스타일
+   ========================================= */
+.start-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #002c5f 0%, #004d91 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.start-screen::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.start-card {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 50px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 6px solid var(--khnp-teal);
+}
+
+.start-card h1 {
+  margin: 0 0 15px 0;
+  color: var(--khnp-blue);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #546e7a;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.start-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  border: 2px solid #eef2f6;
+  border-radius: 16px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-align: center;
+  height: 100%;
+}
+
+.start-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 55, 100, 0.1);
+  border-color: var(--khnp-teal);
+}
+
+.start-btn .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.start-btn .label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+.start-btn .desc {
+  font-size: 0.85rem;
+  color: #888;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.start-btn.primary {
+  background: #fdfdfd;
+}
+.start-btn.primary:hover {
+  background: #f0fdfc;
+}
+
+.footer-info {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #90a4ae;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  width: 100%;
+}
+
+/* =========================================
+   메인 레이아웃 (헤더, 사이드바, 푸터)
+   ========================================= */
+.header-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-shrink: 0;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid var(--khnp-blue);
+}
+
+.roadmap-layout {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  position: relative;
+  min-height: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.roadmap-sidebar {
+  width: 60px;
+  background-color: var(--khnp-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #00284a;
+  flex-shrink: 0;
+  z-index: 20;
+}
+.sidebar-title {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.roadmap-content {
+  flex-grow: 1;
+  width: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#timeline-target {
+  flex: 1;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  outline: none;
+  position: relative;
+}
+
+.roadmap-footer {
+  background-color: var(--khnp-blue);
+  color: white;
+  padding: 8px 20px;
+  text-align: right;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.filter-box {
+  background: white;
+  border-top: 3px solid var(--khnp-teal);
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.02);
+}
+.tag-btn {
+  border: 1px solid #dee2e6;
+  background: #f1f3f5;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444;
+  transition: all 0.2s;
+}
+.tag-btn:hover {
+  background: #e9ecef;
+}
+.tag-btn.active {
+  background: var(--khnp-blue);
+  color: white;
+  border-color: var(--khnp-blue);
+}
+
+/* =========================================
+   7. 모달 (Modal) - 화면 중앙 고정
+   ========================================= */
+.modal-overlay {
+  position: fixed; /* 화면에 고정 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* 전체 화면 덮기 */
+  background: rgba(0, 0, 0, 0.5); /* 반투명 검은 배경 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999 !important; /* 다른 모든 요소(로드맵 등)보다 위에 표시 */
+  backdrop-filter: blur(2px); /* 배경 블러 효과 (선택사항) */
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 550px; /* 너비 고정 */
+  max-height: 90vh; /* 화면보다 크면 스크롤 */
+  overflow-y: auto; /* 세로 스크롤 허용 */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* KHNP 스타일 상단 포인트 */
+  border-top: 5px solid var(--khnp-blue);
+  position: relative; /* 내부 요소 정렬 기준 */
+}
+
+/* 모달 내부 입력창 스타일 */
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  width: 100%; /* 박스 꽉 채우기 */
+  box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+.modal-content input:focus,
+.modal-content select:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: var(--khnp-sky);
+  box-shadow: 0 0 0 3px rgba(0, 87, 184, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}

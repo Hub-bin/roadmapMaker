@@ -1,0 +1,76 @@
+:root {
+  --khnp-blue: #003764;
+  --khnp-sky: #0057b8;
+  --khnp-teal: #009591;
+  --khnp-gray: #f5f7fa;
+  --text-primary: #333333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--khnp-gray);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 버튼, 입력창 등 공통 UI */
+.btn {
+  padding: 8px 18px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--khnp-blue);
+  color: white;
+}
+.btn-primary:hover {
+  background: #00284a;
+}
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* 엑셀/JSON 버튼 */
+.btn[style*="#2e7d32"] {
+  background-color: var(--khnp-teal) !important;
+}
+.btn[style*="#0277bd"] {
+  background-color: var(--khnp-sky) !important;
+}
+
+/* 타이틀 인풋 */
+.title-input {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--khnp-blue);
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 600px;
+}
+.title-input:hover {
+  background-color: #f0f4f8;
+}
+.title-input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--khnp-sky);
+}
